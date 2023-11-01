@@ -1,0 +1,16 @@
+.joke-card {
+  border: 1px solid #fff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: hsl(0, 0%, 100%);
+}
+
+// app.tsx
+.button {
+  border-radius: 100px;
+  font-weight: bold;
+  color: #fff;
+  padding: 8px 24px;
+  border: none;
+  background-color: #61dafb;
+}
