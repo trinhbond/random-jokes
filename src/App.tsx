@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Jokes } from "./types";
-import { Joke, Loading } from "./components";
+import { Joke, Loading, Button, Footer } from "./components";
 
 function App() {
-  const source = "https://publicapis.dev/";
-
   const [jokes, setJokes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [reload, setReload] = useState(true);
@@ -47,29 +45,15 @@ function App() {
           <Joke key={joke.id} {...joke} />
         ))}
 
-        <button
+        <Button
           type="submit"
           className="button"
           onClick={() => setReload(!reload)}
-          // onClick={() => setLoading(!loading)}
         >
           More jokes
-        </button>
+        </Button>
       </div>
-
-      <div className="footer">
-        <p className="source">
-          Courtesy of{" "}
-          <a
-            className="App-link"
-            href={source}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {source}
-          </a>
-        </p>
-      </div>
+      <Footer />
     </div>
   );
 }
