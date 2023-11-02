@@ -4,7 +4,8 @@ function Joke(joke: Jokes) {
   return (
     <div className="joke">
       <div>
-        {setup} <p>{punchline}</p>
+        <span className="setup">{joke.setup}</span>
+        <p className="punchline">{joke.punchline}</p>
       </div>
     </div>
   );
