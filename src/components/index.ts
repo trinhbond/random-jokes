@@ -1,4 +1,5 @@
 import Joke from "./Joke";
 import Loading from "./Loading";
+import Button from "./Button";
 
-export { Joke, Loading };
+export { Joke, Loading, Button };
