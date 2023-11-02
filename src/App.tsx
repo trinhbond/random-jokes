@@ -11,11 +11,6 @@ function App() {
   const [errors, setErrors] = useState([]);
   const isMounted = useRef(false);
 
-  // error status 429
-  /**
-   * {"type":"error","message":"Your ip has exceeded the 100 request limit per 15 minute(s). Try again in in 15 minute(s)."}
-   */
-
   async function getJokes() {
     await fetch(`https://official-joke-api.appspot.com/random_ten`)
       .then((res) => res.json())
@@ -27,7 +22,6 @@ function App() {
       })
       .catch((error) => {
         setErrors(error);
-        console.log(error);
       });
   }
 
@@ -36,8 +30,6 @@ function App() {
 
     getJokes();
 
-    // console.log({ reload });
-
     return () => {
       isMounted.current = false;
     };
@@ -45,8 +37,6 @@ function App() {
 
   if (errors.length) return <>Something went wrong</>;
   if (loading) return <Loading size="medium" />;
-
-  console.log(errors);
 
   return (
     <div className="app">
