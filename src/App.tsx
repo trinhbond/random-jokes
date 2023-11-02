@@ -52,7 +52,7 @@ function App() {
     <div className="app">
       <h1>Random Jokes Generator</h1>
 
-      <div className="jokes-container">
+      <div className="jokes">
         {jokes.map((joke: Jokes) => (
           <Joke key={joke.id} {...joke} />
         ))}

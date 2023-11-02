@@ -1,8 +1,20 @@
-.joke-card {
+.jokes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .joke {
   border: 1px solid #fff;
-  padding: 4px 8px;
+    padding: 14px;
   border-radius: 8px;
-  color: hsl(0, 0%, 100%);
+    color: #fff;
+    .setup {
+      font-weight: bold;
+    }
+    .punchline {
+      margin-top: 12px;
+    }
+  }
 }
 
 // app.tsx
@@ -13,4 +25,6 @@
   padding: 8px 24px;
   border: none;
   background-color: #61dafb;
+  margin: auto;
+  width: 20%;
 }
