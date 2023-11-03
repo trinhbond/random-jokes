@@ -39,13 +39,13 @@ function App() {
     <div className="app">
       <Header />
       <div className="jokes">{jokesList}</div>
-        <Button
-          type="submit"
-          className="button"
-          onClick={() => setReload(!reload)}
-        >
-          More jokes
-        </Button>
+      <Button
+        type="submit"
+        className="button"
+        onClick={() => setReload(!reload)}
+      >
+        More jokes
+      </Button>
       <Footer />
     </div>
   );
