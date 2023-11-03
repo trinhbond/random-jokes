@@ -1,15 +1,19 @@
 .jokes {
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 12px;
 
   .joke {
-  border: 1px solid #fff;
-    padding: 14px;
-  border-radius: 8px;
+    border: 1px solid #fff;
+    border-radius: 8px;
     color: #fff;
+    padding: 14px;
+    width: 50%;
+
     .setup {
       font-weight: bold;
+      font-size: 1.1rem;
     }
     .punchline {
       margin-top: 12px;
