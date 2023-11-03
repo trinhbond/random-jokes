@@ -6,8 +6,8 @@ function Footer() {
       <p className="source">
         Courtesy of{" "}
         <a
-          className="App-link"
           href={source}
+          title={source}
           target="_blank"
           rel="noopener noreferrer"
         >
