@@ -17,14 +17,16 @@
       }
     }
   }
-}
 
-// .App-link {
-//   color: #61dafb;
-// }
-
-* {
-  padding: 0;
-  margin: 0;
-  background-color: #282c34;
+  .button {
+    border-radius: 100px;
+    border: none;
+    background-color: #61dafb;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: auto;
+    padding: 8px 24px;
+    white-space: nowrap;
+  }
 }

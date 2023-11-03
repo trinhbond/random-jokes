@@ -1,5 +1,16 @@
 @import "jokes-card", "app", "spinner";
 
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #282c34;
+}
+
+#root {
+  max-width: 1650px;
+  margin: auto;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
