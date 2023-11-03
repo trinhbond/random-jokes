@@ -1,5 +1,6 @@
 function Footer() {
   const source = "https://publicapis.dev/";
+  const github = "https://github.com/trinhbond/random-jokes";
 
   return (
     <div className="footer">
@@ -11,7 +12,16 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {source}
+          publicapis.dev
+        </a>{" "}
+        |{" "}
+        <a
+          href={github}
+          title={github}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Code
         </a>
       </p>
     </div>
