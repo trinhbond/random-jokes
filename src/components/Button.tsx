@@ -5,7 +5,7 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className: string;
   type?: ButtonType;
   title?: string;
-  onClick?: React.MouseEventHandler;
+  onClick: React.MouseEventHandler;
 }
 
 const Button: React.FC<IButton> = ({ children, ...props }) => (
