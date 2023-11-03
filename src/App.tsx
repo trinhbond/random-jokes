@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Jokes } from "./types";
-import { Joke, Loading, Button, Footer } from "./components";
+import { Joke, Loading, Button, Footer, Header } from "./components";
 
 function App() {
   const [jokes, setJokes] = useState([]);
@@ -38,8 +38,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Random Jokes Generator</h1>
-
+      <Header />
       <div className="jokes">
         {jokes.map((joke: Jokes) => (
           <Joke key={joke.id} {...joke} />
