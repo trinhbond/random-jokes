@@ -24,21 +24,21 @@ function App() {
         setErrors(error);
       });
 
-    // Cancel the previous request when `reload` changes
+    // Cancel the previous request when `reload` changes state
     return () => controller.abort();
   }, [reload]);
 
   // TODO: Handle errors
   if (loading) return <Loading size="medium" />;
 
+  const jokesList = jokes.map((joke: Jokes) => (
+    <Joke key={joke.id} {...joke} />
+  ));
+
   return (
     <div className="app">
       <Header />
-      <div className="jokes">
-        {jokes.map((joke: Jokes) => (
-          <Joke key={joke.id} {...joke} />
-        ))}
-
+      <div className="jokes">{jokesList}</div>
         <Button
           type="submit"
           className="button"
@@ -46,7 +46,6 @@ function App() {
         >
           More jokes
         </Button>
-      </div>
       <Footer />
     </div>
   );
