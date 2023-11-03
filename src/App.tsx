@@ -1,39 +1,34 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Jokes } from "./types";
 import { Joke, Loading, Button, Footer, Header } from "./components";
+import axios from "axios";
 
 function App() {
   const [jokes, setJokes] = useState([]);
+  const [errors, setErrors] = useState(null);
   const [loading, setLoading] = useState(true);
   const [reload, setReload] = useState(true);
-  const [errors, setErrors] = useState([]);
-  const isMounted = useRef(false);
 
-  async function getJokes() {
-    await fetch(`https://official-joke-api.appspot.com/random_ten`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (isMounted) {
-          setJokes(data);
-          setLoading(false);
-        }
+  useEffect(() => {
+    const controller = new AbortController();
+
+    axios
+      .get(`https://official-joke-api.appspot.com/random_ten`, {
+        signal: controller.signal,
+      })
+      .then((res) => {
+        setJokes(res.data);
+        setLoading(false);
       })
       .catch((error) => {
         setErrors(error);
       });
-  }
 
-  useEffect(() => {
-    isMounted.current = true;
-
-    getJokes();
-
-    return () => {
-      isMounted.current = false;
-    };
+    // Cancel the previous request when `reload` changes
+    return () => controller.abort();
   }, [reload]);
 
-  if (errors.length) return <>Something went wrong</>;
+  // TODO: Handle errors
   if (loading) return <Loading size="medium" />;
 
   return (
