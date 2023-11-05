@@ -12,6 +12,12 @@
     padding: 14px;
     width: 50%;
 
+    @include max-screen($max-medium) {
+      width: 60% !important;
+    }
+    @include max-screen($max-small) {
+      width: 80% !important;
+    }
     .setup {
       font-weight: bold;
       font-size: 1.1rem;
