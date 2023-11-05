@@ -13,8 +13,8 @@ function Footer() {
           rel="noopener noreferrer"
         >
           publicapis.dev
-        </a>{" "}
-        |{" "}
+        </a>
+        {" | "}
         <a
           href={github}
           title={github}
