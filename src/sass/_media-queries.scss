@@ -1,0 +1,19 @@
+$min-small: 600px;
+$min-medium: 960px;
+$min-large: 1280px;
+
+$max-small: 980px;
+$max-medium: 1200px;
+$max-large: 1600px;
+
+@mixin max-screen($res) {
+  @media screen and (max-width: $res) {
+    @content;
+  }
+}
+
+@mixin min-screen($res) {
+  @media screen and (min-width: $res) {
+    @content;
+  }
+}
