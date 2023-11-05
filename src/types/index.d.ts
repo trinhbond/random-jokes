@@ -1,4 +1,4 @@
-export interface Jokes {
+export interface IJoke {
   type: string;
   setup: string;
   punchline: string;

@@ -1,49 +1,24 @@
-import { useEffect, useState } from "react";
-import { Jokes } from "./types";
+import { IJoke } from "./types";
 import { Joke, Loading, Button, Footer, Header } from "./components";
-import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import { fetchJokes } from "./utils";
 
 function App() {
-  const [jokes, setJokes] = useState([]);
-  const [errors, setErrors] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [reload, setReload] = useState(true);
+  const { data, error, isLoading, isFetching, refetch } = useQuery({
+    queryKey: ["jokes"],
+    queryFn: fetchJokes,
+  });
 
-  useEffect(() => {
-    const controller = new AbortController();
+  if (error) return <div className="error">{error.message}</div>;
+  if (isFetching || isLoading) return <Loading size="medium" />;
 
-    axios
-      .get(`https://official-joke-api.appspot.com/random_ten`, {
-        signal: controller.signal,
-      })
-      .then((res) => {
-        setJokes(res.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setErrors(error);
-      });
-
-    // Cancel the previous request when `reload` changes state
-    return () => controller.abort();
-  }, [reload]);
-
-  // TODO: Handle errors
-  if (loading) return <Loading size="medium" />;
-
-  const jokesList = jokes.map((joke: Jokes) => (
-    <Joke key={joke.id} {...joke} />
-  ));
+  const jokesList = data.map((joke: IJoke) => <Joke key={joke.id} {...joke} />);
 
   return (
     <div className="app">
       <Header />
       <div className="jokes">{jokesList}</div>
-      <Button
-        type="submit"
-        className="button"
-        onClick={() => setReload(!reload)}
-      >
+      <Button type="submit" className="button" onClick={() => refetch()}>
         More jokes
       </Button>
       <Footer />

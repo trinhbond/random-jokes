@@ -1,6 +1,6 @@
-import { Jokes } from "../types";
+import { IJoke } from "../types";
 
-function Joke(joke: Jokes) {
+function Joke(joke: IJoke) {
   return (
     <div className="joke">
       <div>
