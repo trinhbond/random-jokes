@@ -18,7 +18,12 @@ function App() {
     <div className="app">
       <Header />
       <div className="jokes">{jokesList}</div>
-      <Button type="submit" className="button" onClick={() => refetch()}>
+      <Button
+        type="submit"
+        className="button"
+        title="More jokes"
+        onClick={() => refetch()}
+      >
         More jokes
       </Button>
       <Footer />

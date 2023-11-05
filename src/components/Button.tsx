@@ -3,7 +3,7 @@ type ButtonType = "button" | "reset" | "submit";
 interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className: string;
-  type?: ButtonType;
+  type: ButtonType;
   title?: string;
   onClick: React.MouseEventHandler;
 }
