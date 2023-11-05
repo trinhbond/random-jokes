@@ -1,7 +1,7 @@
 function Header() {
   return (
     <div className="header">
-      <h1>Random Jokes Generator</h1>
+      <h1>Random Jokes</h1>
     </div>
   );
 }
