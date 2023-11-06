@@ -1,5 +1,6 @@
-import { IJoke } from "../types";
 import { useQuery } from "@tanstack/react-query";
+
+import { IJoke } from "../types";
 import { fetchJokes } from "../utils";
 import { Joke, Loading, Button } from "./index";
 
