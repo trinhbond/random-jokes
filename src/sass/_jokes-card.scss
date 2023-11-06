@@ -23,7 +23,23 @@
       font-size: 1.1rem;
     }
     .punchline {
-      margin-top: 12px;
+      margin: 12px 0 24px 0;
+    }
+    .type {
+      border: 1px solid beige;
+      border-radius: 100px;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      padding: 2px 12px;
+
+      &.general {
+      }
+      &.programming {
+      }
+      &.dad {
+      }
+      &.knock-knock {
+      }
     }
   }
 }
