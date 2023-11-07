@@ -2,7 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 
 import { IJoke } from "../types";
 import { fetchJokes } from "../utils";
-import { Joke, Loading, Button } from "./index";
+import Joke from "./Joke";
+import Button from "./Button";
+import Loading from "./Loading";
 
 function Jokes() {
   const { data, status, error, isFetching, refetch } = useQuery({
