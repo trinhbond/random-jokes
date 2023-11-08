@@ -1,10 +1,10 @@
 import classNames from "classnames";
 
-type Sizes = {
+type Size = {
   size: "small" | "medium" | "large";
 };
 
-function Loading({ size }: Sizes) {
+function Loading({ size }: Size) {
   return (
     <div className="spinner-parent">
       <div className={classNames("spinner", size)}>
