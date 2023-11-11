@@ -24,14 +24,14 @@ function Jokes() {
         ))}
       </div>
 
-      <Button
+      <button
         type="submit"
         className="button"
         title="More jokes"
         onClick={() => refetch()}
       >
         More jokes
-      </Button>
+      </button>
     </>
   );
 }
