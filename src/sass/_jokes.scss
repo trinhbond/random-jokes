@@ -13,10 +13,10 @@
     width: 50%;
 
     @include max-screen($max-medium) {
-      width: 60% !important;
+      width: 60%;
     }
     @include max-screen($max-small) {
-      width: 80% !important;
+      width: 80%;
     }
     .setup {
       font-weight: bold;
