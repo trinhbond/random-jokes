@@ -10,16 +10,16 @@
     position: relative;
 
     &.small {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
     }
     &.medium {
       height: 200px;
       width: 200px;
     }
     &.large {
-      height: 300px;
-      width: 300px;
+      height: 250px;
+      width: 250px;
     }
     div {
       box-sizing: border-box;
