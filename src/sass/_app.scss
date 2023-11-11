@@ -10,7 +10,7 @@
     margin: 48px 0 24px 0;
     text-align: center;
 
-    p.source {
+    div.source {
       a {
         color: #61dafb;
         text-decoration: none;
@@ -18,7 +18,6 @@
         &:hover {
           text-decoration: underline;
         }
-      }
       }
     }
   }
@@ -28,6 +27,7 @@
     border: none;
     background-color: #61dafb;
     color: #fff;
+    cursor: pointer;
     font-size: 1.1rem;
     font-weight: bold;
     margin: auto;
