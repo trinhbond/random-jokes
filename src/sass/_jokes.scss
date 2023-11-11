@@ -28,9 +28,11 @@
     .type {
       border: 1px solid beige;
       border-radius: 100px;
+      display: inline-block;
       font-size: 0.65rem;
+      line-height: 1.6;
       text-transform: uppercase;
-      padding: 2px 12px;
+      padding: 0 10px;
 
       &.general {
       }

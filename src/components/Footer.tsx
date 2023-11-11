@@ -1,20 +1,20 @@
 function Footer() {
-  const source = "https://publicapis.dev/";
-  const github = "https://github.com/trinhbond/random-jokes";
+  const source = "https://github.com/trinhbond/random-jokes";
 
   return (
     <div className="footer">
-      <p className="source">
-        Courtesy of{" "}
+      <div className="source">
+        {"Check out the "}
         <a
           href={source}
           title={source}
           target="_blank"
           rel="noopener noreferrer"
         >
-          publicapis.dev
+          GitHub code
         </a>
-        {" | "}
+        {"!"}
+      </div>
         <a
           href={github}
           title={github}
