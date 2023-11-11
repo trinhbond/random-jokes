@@ -1,10 +1,28 @@
 import { useQuery } from "@tanstack/react-query";
+import classNames from "classnames";
 
 import { IJoke } from "../types";
-import { fetchJokes } from "../utils";
-import Joke from "./Joke";
-import Button from "./Button";
+import { fetchJokes, capitalize } from "../utils";
 import Loading from "./Loading";
+
+function Joke(joke: IJoke) {
+  const jokeType = capitalize(joke.type);
+
+  return (
+    <div className="joke">
+      <div>
+        <p className="setup">{joke.setup}</p>
+        <p className="punchline">{joke.punchline}</p>
+        <span
+          title={`${jokeType} joke`}
+          className={classNames("type", joke.type)}
+        >
+          {jokeType}
+        </span>
+      </div>
+    </div>
+  );
+}
 
 function Jokes() {
   const { data, status, error, isFetching, refetch } = useQuery({
@@ -12,7 +30,7 @@ function Jokes() {
     queryFn: fetchJokes,
   });
 
-  if (isFetching || status === "pending") return <Loading size="large" />;
+  if (isFetching || status === "pending") return <Loading size="small" />;
 
   if (status === "error") return <div className="error">{error.message}</div>;
 
