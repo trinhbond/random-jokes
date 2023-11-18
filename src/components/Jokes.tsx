@@ -28,6 +28,7 @@ function Jokes() {
   const { data, status, error, isFetching, refetch } = useQuery({
     queryKey: ["jokes"],
     queryFn: fetchJokes,
+    refetchOnWindowFocus: false,
   });
 
   if (isFetching || status === "pending") return <Loading size="small" />;
