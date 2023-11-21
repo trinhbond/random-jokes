@@ -1,0 +1,14 @@
+.loading {
+  &.sm {
+    width: 150px;
+    height: 150px;
+  }
+  &.md {
+    height: 200px;
+    width: 200px;
+  }
+  &.lg {
+    height: 250px;
+    width: 250px;
+  }
+}

@@ -31,7 +31,7 @@ function Jokes() {
     refetchOnWindowFocus: false,
   });
 
-  if (isFetching || status === "pending") return <Loading size="small" />;
+  if (isFetching || status === "pending") return <Loading size="sm" />;
 
   if (status === "error") return <div className="error">{error.message}</div>;
 
