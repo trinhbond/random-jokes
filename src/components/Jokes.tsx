@@ -1,9 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import classNames from "classnames";
-
-import { IJoke } from "../types";
 import { fetchJokes, capitalize } from "../utils";
 import Loading from "./Loading";
+
+interface IJoke {
+  type: string;
+  setup: string;
+  punchline: string;
+  id: number;
+}
 
 function Joke(joke: IJoke) {
   const jokeType = capitalize(joke.type);
